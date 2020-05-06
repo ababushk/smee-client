@@ -50,7 +50,7 @@ class Client {
   }
 
   start () {
-    const events = new EventSource(this.source)
+      const events = new EventSource(this.source, {proxy: process.env.https_proxy})
 
     // Reconnect immediately
     events.reconnectInterval = 0
